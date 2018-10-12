@@ -1,5 +1,4 @@
 #Tensors - similar to numpy ndarrays also can be used on a GPU accelerated computing
-
 # -*- coding: utf-8 -*-
 
 from __future__ import print_function
@@ -23,10 +22,8 @@ print(x)
 x = torch.randn_like(x, dtype=torch.float)
 print(x)
 
-
 #get x size
 print(x.size())
-
 
 #operatations
 y = torch.rand(5,3)
@@ -49,12 +46,10 @@ y = x.view(16)
 z = x.view(-1, 8)  # the size -1 is inferred from other dimensions
 print(x.size(), y.size(), z.size())
 
-
 #f you have a one element tensor, use .item() to get the value as a Python number
 x = torch.randn(1)
 print(x)
 print(x.item())
-
 
 #Converting a Torch Tensor to a NumPy Array
 
