@@ -1,4 +1,4 @@
-#Tensors - similar to numpy ndarrays also can be used on a GPU accelerated computing
+ #Tensors - similar to numpy ndarrays also can be used on a GPU accelerated computing
 # -*- coding: utf-8 -*-
 
 from __future__ import print_function
@@ -86,11 +86,11 @@ print(torch.tensor([1.2, 3]).dtype)
 print(torch.get_default_dtype())
 #torch.floaat32
 
-a=torch.randn(1,2,3,4,5)
-print(torch.nume1(a))
+
+print(torch.numel(torch.randn(1,2,3,4,5)))
 #120
 a=torch.zeros(4,4)
-print(torch.nume1(a))
+print(torch.numel(a))
 #16
 
 print(torch.zeros_like(torch.empty(2,3)))
@@ -114,11 +114,7 @@ print(torch.arange(1,4))
 print(torch.arange(1,2.5,0.5))
 #tensor([1.0000, 1.5000, 2.0000])
 
-print(torch.range(1,4))
-#tensor([1., 2., 3., 4.])
-print(torch.range(1, 4, 0.5))
-#tensor([ 1.0000,  1.5000,  2.0000,  2.5000,  3.0000,  3.5000,  4.0000])
-
+ 
 #Returns a one-dimensional tensor of steps equally spaced points between start and end.
 print(torch.linspace(3, 10, steps=5))
 #tensor([  3.0000,   4.7500,   6.5000,   8.2500,  10.0000]) 
@@ -129,23 +125,3 @@ print(torch.linspace(start=-10, end=10, steps=5))
 
 print(torch.eye(3))
 #tensor([[1.,0.,0.],[0., 1., 0.], [0. ,0., 1.]])
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
