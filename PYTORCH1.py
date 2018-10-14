@@ -125,3 +125,73 @@ print(torch.linspace(start=-10, end=10, steps=5))
 
 print(torch.eye(3))
 #tensor([[1.,0.,0.],[0., 1., 0.], [0. ,0., 1.]])
+
+print(torch.empty(2,3))
+#tensor([[0., 0., 0.],[0., 0., 0.]])
+
+print(torch.full((2, 3), 3.141592))
+#tensor([[3.1416, 3.1416, 3.1416],[3.1416, 3.1416, 3.1416]])
+
+x = torch.randn(2, 3)
+print(x)
+#tensor([[ 0.6580, -1.0969, -0.4614], [-0.1034, -0.5790,  0.1497]])
+print(torch.cat((x, x, x), 0))
+#tensor([[ 0.6580, -1.0969, -0.4614],
+#        [-0.1034, -0.5790,  0.1497],
+#        [ 0.6580, -1.0969, -0.4614],
+#        [-0.1034, -0.5790,  0.1497],
+#        [ 0.6580, -1.0969, -0.4614],
+#        [-0.1034, -0.5790,  0.1497]])
+print(torch.cat((x, x, x), 1))
+#tensor([[ 0.6580, -1.0969, -0.4614,  0.6580, -1.0969, -0.4614,  0.6580,
+#         -1.0969, -0.4614],
+#        [-0.1034, -0.5790,  0.1497, -0.1034, -0.5790,  0.1497, -0.1034,
+#         -0.5790,  0.1497]])
+
+t = torch.tensor([[1,2],[3,4]])
+print(torch.gather(t, 1, torch.tensor([[0,0],[1,0]])))
+#tensor([[1, 1],
+#        [4, 3]])
+
+x = torch.randn(3, 4)
+print(x)
+#tensor([[ 0.1427,  0.0231, -0.5414, -1.0009],
+#        [-0.4664,  0.2647, -0.1228, -1.1068],
+#        [-1.1734, -0.6571,  0.7230, -0.6004]])
+indices = torch.tensor([0, 2])
+print(torch.index_select(x, 0, indices))
+#tensor([[ 0.1427,  0.0231, -0.5414, -1.0009],
+#        [-1.1734, -0.6571,  0.7230, -0.6004]])
+print(torch.index_select(x, 1, indices))
+#tensor([[ 0.1427, -0.5414],
+#        [-0.4664, -0.1228],
+#        [-1.1734,  0.7230]])
+
+print(torch.nonzero(torch.tensor([1, 1, 1, 0, 1]))) #returns indices of all non zero elements
+#tensor([[0],[1],[2],[4]])
+
+a = torch.arange(4.)
+print(a)
+#tensor([0., 1., 2., 3.])
+print(torch.reshape(a,(2,2)))
+#tensor([[0., 1.],
+#        [2., 3.]])
+b = torch.tensor([[0, 1], [2, 3]])
+print(b)
+#tensor([[0, 1],
+#        [2, 3]])
+print(torch.reshape(b, (-1,)))
+#tensor([ 0,  1,  2,  3])
+
+x = torch.randn(2,3)
+print(x)
+#tensor([[-0.2122,  1.1628, -0.7705],
+#        [ 2.4844,  0.1818,  0.2871]])
+print(torch.t(x)) #expects input to be matrix(2d tensor) and trasposes dimensions 0 an 1
+#tensor([[-0.2122,  2.4844],
+#        [ 1.1628,  0.1818],
+#        [-0.7705,  0.2871]])
+
+src = torch.tensor([[4, 3, 5], [6, 7, 8]])
+print(torch.take(src, torch.tensor([0, 2, 5])))#Returns a new tensor with the elements of input at the given indices
+#tensor([ 4,  5,  8])
