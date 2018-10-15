@@ -195,3 +195,27 @@ print(torch.t(x)) #expects input to be matrix(2d tensor) and trasposes dimension
 src = torch.tensor([[4, 3, 5], [6, 7, 8]])
 print(torch.take(src, torch.tensor([0, 2, 5])))#Returns a new tensor with the elements of input at the given indices
 #tensor([ 4,  5,  8])
+
+x = torch.randn(2, 3)
+print(x)
+#tensor([[-0.7259,  1.8439,  0.1248],
+#        [-0.2970, -1.2318,  0.1906]])
+print(torch.transpose(x, 0, 1))
+#tensor([[-0.7259, -0.2970],
+#        [ 1.8439, -1.2318],
+#        [ 0.1248,  0.1906]])
+
+print(torch.unbind(torch.tensor([[1, 2, 3],[4, 5, 6],[7, 8, 9]])))
+#(tensor([1, 2, 3]), tensor([4, 5, 6]), tensor([7, 8, 9]))
+
+x = torch.randn(3, 2)
+y = torch.ones(3, 2)
+print(x)
+#tensor([[ 0.6744, -0.7159],
+#        [ 0.7594, -0.1935],
+#        [ 1.2827, -0.3491]])
+print(torch.where(x > 0, x, y))
+#tensor([[0.6744, 1.0000],
+#        [0.7594, 1.0000],
+#        [1.2827, 1.0000]])
+
