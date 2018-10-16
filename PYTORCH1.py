@@ -219,3 +219,21 @@ print(torch.where(x > 0, x, y))
 #        [0.7594, 1.0000],
 #        [1.2827, 1.0000]])
 
+a= torch.empty(3,3).uniform_(0,1) #generate a uniform random matrix with range [0, 1]
+print(a)
+#tensor([[0.4388, 0.6387, 0.5247],
+#        [0.6826, 0.3051, 0.4635],
+#        [0.4550, 0.5725, 0.4980]])
+print(torch.bernoulli(a))
+#tensor([[0., 1., 1.],
+#        [0., 0., 1.],
+#        [1., 0., 1.]])
+
+
+
+
+
+
+
+
+
