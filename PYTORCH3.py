@@ -1,11 +1,9 @@
 """
-
 Autograd - Automatic differentiation
 
 Autograd package Provide automatic differentiation for all operations on Tensors.
 It is a define by run framework, the backdrop is defined by how the code runs, every
 single iteration can be different.
-
 
 Tensor - 
 
@@ -24,7 +22,6 @@ Tensor and Function are interconnected and build up an acyclic graph,
 that encodes a complete history of computation. Each tensor has a .grad_fn 
 attribute that references a Function that has created the Tensor (except for 
 Tensors created by the user - their grad_fn is None).
-
 
 import torch
 Create a tensor and set requires_grad=True to track computation with it
