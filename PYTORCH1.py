@@ -228,3 +228,78 @@ print(torch.bernoulli(a))
 #tensor([[0., 1., 1.],
 #        [0., 0., 1.],
 #        [1., 0., 1.]])
+
+#Returns a tensor of random numbers drawn from separate normal distributions whose mean and standard deviation are given.
+print(torch.normal(mean=torch.arange(1., 11.), std=torch.arange(1, 0, -0.1))) #
+#tensor([ 1.8552,  1.2864,  3.8893,  3.4691,  5.0479,  5.9427,  6.3132,  8.6189,
+#         9.3320, 10.1098])
+print(torch.normal(mean=0.5, std=torch.arange(1., 6.)))
+#tensor([ 0.2792,  0.1709, -4.3310, -3.5642,  6.1855])
+print(torch.normal(mean=torch.arange(1., 6.)))
+#tensor([1.9015, 0.4099, 2.0306, 4.6454, 6.1372])
+
+#Returns a tensor filled with random numbers from a uniform distribution on the interval [0,1)
+torch.rand(4)
+#tensor([0.2946, 0.8376, 0.9923, 0.9826])
+
+torch.randn(2, 3)
+#tensor([[-0.0700,  0.0358, -0.1230],
+#        [ 0.6277, -0.3289, -1.6249]])
+
+#Returns a random permutation of integers from 0 to n - 1.
+torch.randperm(4)
+#tensor([0, 1, 3, 2])
+
+ # Save to file
+x = torch.tensor([0, 1, 2, 3, 4])
+torch.save(x, 'tensor.pt')
+# Save to io.BytesIO buffer
+buffer = io.BytesIO()
+torch.save(x, buffer)
+
+torch.load('tensors.pt')
+# Load all tensors onto the CPU
+torch.load('tensors.pt', map_location=torch.device('cpu'))
+# Load all tensors onto the CPU, using a function
+torch.load('tensors.pt', map_location=lambda storage, loc: storage)
+# Load all tensors onto GPU 1
+torch.load('tensors.pt', map_location=lambda storage, loc: storage.cuda(1))
+# Map tensors from GPU 1 to GPU 0
+torch.load('tensors.pt', map_location={'cuda:1':'cuda:0'})
+# Load tensor from io.BytesIO object
+with open('tensor.pt') as f:
+    buffer = io.BytesIO(f.read())
+torch.load(buffer)
+
+#Math operations
+torch.abs(torch.tensor([-1, -2, 3]))
+#tensor([ 1,  2,  3])
+
+a = torch.randn(4)
+print(a)
+#tensor([-0.4931,  0.1031, -1.3724,  0.7672])
+torch.acos(a)
+#tensor([2.0865, 1.4675,    nan, 0.6963])
+
+a = torch.randn(4)
+print(a)
+#tensor([ 0.6939,  0.4375, -1.5540, -1.0776])
+torch.add(a, 20)
+#tensor([20.6939, 20.4375, 18.4460, 18.9224])
+
+a = torch.randn(4)
+b = torch.randn(4, 1)
+torch.add(a, 10, b)
+#tensor([[  2.7695,   3.3930,   4.3672,   4.1450],
+#        [-18.6971, -18.0736, -17.0994, -17.3216],
+#        [ -6.7845,  -6.1610,  -5.1868,  -5.4090],
+#        [ -8.9902,  -8.3667,  -7.3925,  -7.6147]])
+
+a = torch.randn(4)
+torch.ceil(a)
+#tensor([-0., -1., -1.,  1.])
+
+
+
+
+
