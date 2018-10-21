@@ -1,2 +1,2 @@
 # Pytorch_learning
-learning pytorch
+Pytorch Learning for Education.
