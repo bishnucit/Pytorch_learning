@@ -55,6 +55,4 @@ for i in range(epoch):
  
 print('actual :\n', y, '\n')
 print('predicted :\n', output)
-
-
 #output - https://monosnap.com/file/KqSAW2hk32vzuOt52o08ewuCL0cdAo
