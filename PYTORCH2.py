@@ -2,7 +2,6 @@
 
 ## neural network in pytorch
 import torch
-
 #Input array
 X = torch.Tensor([[1,0,1,0],[1,0,1,1],[0,1,0,1]])
 
