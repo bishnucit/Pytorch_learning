@@ -3,7 +3,6 @@ Autograd - Automatic differentiation
 Autograd package Provide automatic differentiation for all operations on Tensors.
 It is a define by run framework, the backdrop is defined by how the code runs, every
 single iteration can be different.
-
 Tensor - 
 torch.Tensor is the central class of the package.
 if its attribute is set as .requires_grad as True, it starts to track all operations on it.
