@@ -15,7 +15,6 @@ print(x)
 x = torch.tensor([5.5,3]) #tensor directly from data
 print(x)
 
-
 x = x.new_ones(5, 3, dtype=torch.double) #tensor based on an existing tensor. 
 print(x)
 
