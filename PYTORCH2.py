@@ -30,7 +30,6 @@ wout=torch.randn(hiddenlayer_neurons, output_neurons)
 bout=torch.randn(1, output_neurons)
 
 for i in range(epoch):
-
   #Forward Propogation
   hidden_layer_input1 = torch.mm(X, wh)
   hidden_layer_input = hidden_layer_input1 + bh
