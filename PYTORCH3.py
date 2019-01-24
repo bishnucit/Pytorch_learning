@@ -12,7 +12,6 @@ be accumulated in .grad attribute. To stop tracking history, .detach() can be ca
 To prevent tracking history, save memory, torch.no_grad(): can be used to wrap the code.
 
 Another important class for Autograd is Function.
-
 Function -
 Tensor and Function are interconnected and build up an acyclic graph, 
 that encodes a complete history of computation. Each tensor has a .grad_fn 
