@@ -28,7 +28,6 @@ wh=torch.randn(inputlayer_neurons, hiddenlayer_neurons).type(torch.FloatTensor)
 bh=torch.randn(1, hiddenlayer_neurons).type(torch.FloatTensor)
 wout=torch.randn(hiddenlayer_neurons, output_neurons)
 bout=torch.randn(1, output_neurons)
-
 for i in range(epoch):
   #Forward Propogation
   hidden_layer_input1 = torch.mm(X, wh)
