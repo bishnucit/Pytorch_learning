@@ -69,7 +69,6 @@ np.add(a, 1, out=a)
 print(a)
 print(b)
 
-
 print(torch.is_tensor(torch.tensor([1,2])))
 #True
 
